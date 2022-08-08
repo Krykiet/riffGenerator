@@ -1,5 +1,5 @@
 # riffGenerator
-Guitar riff generator weekend project.
+Guitar riff generator side-project.
 
 This is the cornerstone project for ML-based guitar riff and tabulature generator. 
 
