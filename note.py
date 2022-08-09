@@ -2,6 +2,8 @@ validNotes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}
 
 class Note:
 
+    #TODO valid note times and prolonged notes
+
     def __init__(self, value, name="r", octave=None):
         # name of the note, default is the rest
         self.name = name
