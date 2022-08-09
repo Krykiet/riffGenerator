@@ -1,14 +1,17 @@
 validNotes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}
+validValues = {1, 2, 4, 8, 16, 32, 64, "2*", "4*", "8*", "16*", "32*", "64*"}
 
 class Note:
-
-    #TODO valid note times and prolonged notes
-
-    def __init__(self, value, name="r", octave=None):
+    #TODO position system
+    def __init__(self, value, position, name="r", octave=None):
         # name of the note, default is the rest
         self.name = name
+        if name not in validNotes:
+            raise ValueError(f"Notes name must be one of {validNotes}")
         # default octave as 2 or 3
         self.octave = octave
+        # position in the bar
+        self.position = position
         if octave is None:
             if name in {"C", "C#", "D", "D#"}:
                 self.octave = 3
@@ -16,6 +19,7 @@ class Note:
                 self.octave = 2
         # value = duration of the note, no default
         self.value = value
-        if name not in validNotes:
-            raise ValueError(f"Notes name must be one of {validNotes}")
+        if value not in validValues:
+            raise ValueError(f"Invalid value for {name} note")
+
 
