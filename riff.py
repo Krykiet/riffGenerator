@@ -1,10 +1,10 @@
+from note import *
 
 valid_time_signatures = {1,2,4,8,16,32,64,128}
 class Riff:
-    def __init__(self, notes, rhythm, length=0, *args):
-        self.length = length
-        # Rhythm - places in bar when individual notes can start
-        self.rhythm = rhythm
+    notes = []
+    def __init__(self, notes, *args):
+
         # Duration and note symbol -
         self.notes = notes
 
@@ -20,6 +20,12 @@ class Riff:
                 raise ValueError(f"Invalid time signature values {metre}.") # Wrong number in time signature
 
         self.timeSignature = set_time_signature(*args)
+
+        # bar - places in bar when individual notes can start.
+        # TODO need to create bar structure, dependent on time signature
+        self.bar = None
+        # TODO length to be calculated from total bar length
+        self.length = None
 
 
 

@@ -12,6 +12,7 @@ class Note:
         self.octave = octave
         # position in the bar
         self.position = position
+        # TODO not so sure how to do this yet, probably tuple x with precision of (1/4^n) where n is len(x)
         if octave is None:
             if name in {"C", "C#", "D", "D#"}:
                 self.octave = 3
