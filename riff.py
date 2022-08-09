@@ -3,5 +3,6 @@ class Riff:
         self.length = length
         # Rhythm - places in bar when individual notes can start
         self.rhythm = rhythm
-        # Duration of each note
+        # Duration and note symbol -
         self.notes = notes
+
